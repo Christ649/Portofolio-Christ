@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio--Christ</title>
+    <style>
+        :root{
+            /* Palette Tech / Cyber / IA */
+            --bg-dark: #0A0F1D;         /* Fond sombre profond (Cybersecurity vibe) */
+            --card-bg: #151F32;         /* Fond des cartes plus clair pour le contraste */
+            --accent-cyber: #10B981;    /* Vert Émeraude (Sécurité, Validation, Code) */
+            --accent-ia: #00D2FF;       /* Cyan Électrique (Intelligence Artificielle, Futurisme) */
+            --btn-hover: #3B82F6;       /* Bleu Tech */
+            --text-main: #F3F4F6;       /* Blanc cassé hyper lisible */
+            --text-muted: #9CA3AF;      /* Gris doux pour les paragraphes */
+        }
+        body{
+            margin: 0px;
+            padding: 0px;
+            background-color: var(--bg-dark);
+            font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
+            min-height: 100vh;
+            background-image: linear-gradient(to bottom, rgba(10, 15, 29, 0.85), rgba(10, 15, 29, 0.95)), url('mon profil.webp');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            background-position: center;
+            color: var(--text-main);
+        }
+        .hero{
+            text-align: center;
+            background: linear-gradient(135deg, rgba(21, 31, 50, 0.95) 0%, rgba(10, 15, 29, 0.95) 100%);
+            border-bottom: 2px solid rgba(0, 210, 255, 0.2);
+            padding: 80px 20px;
+        }
+        header h1{
+            color: var(--text-main);
+            font-size: 2.5em;
+            letter-spacing: 1px;
+            text-shadow: 0 0 20px rgba(0, 210, 255, 0.3);
+        }
+        header p{
+            font-size: 1.4em;
+            color: var(--accent-ia);
+            font-weight: 500;
+        }
+        header button {
+            border: 1px solid var(--accent-ia);
+            border-radius: 6px;
+            background-color: rgba(0, 210, 255, 0.1);
+            height: 50px;
+            width: 160px;
+            font-size: 1.1em;
+            font-weight: 600;
+            color: var(--accent-ia);
+            transition: all 0.3s ease;
+            margin: 15px;
+            cursor: pointer;
+        }
+        header button:hover{
+            transform: translateY(-3px);
+            background-color: var(--accent-ia);
+            color: var(--bg-dark);
+            box-shadow: 0 0 15px var(--accent-ia);
+        }
+        .props{
+            border-left: 6px solid var(--accent-cyber);
+            text-align: left;
+            padding-left: 15px;
+            color: var(--text-main);
+            font-size: 2em;
+            margin: 40px 20px 20px 20px;
+            padding: 10px;
+            background: linear-gradient(90deg, var(--card-bg), transparent);
+            width: fit-content;
+            border-radius: 0 8px 8px 0;
+        }
+        .propos{
+            border-radius: 10px;
+            background-color: var(--card-bg);
+            color: var(--text-muted);
+            font-size: 1.2em;
+            line-height: 1.6;
+            padding: 25px;
+            margin: 20px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+            text-align: justify;
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+        .competences{
+            border: 1px solid rgba(16, 185, 129, 0.2);
+            padding: 15px 25px;
+            background-color: rgba(21, 31, 50, 0.7);
+            margin: 15px 20px;
+            border-radius: 12px;
+            font-size: 1.2em;
+            color: var(--text-main);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: transform 0.2s;
+        }
+        .competences:hover {
+            transform: translateX(5px);
+            border-color: var(--accent-cyber);
+        }
+        .competences span {
+            color: var(--accent-cyber);
+            text-shadow: 0 0 8px var(--accent-cyber);
+        }
+        .projet{
+            border-radius: 10px;
+            background-color: var(--card-bg);
+            margin: 20px;
+            color: var(--text-muted);
+            font-size: 1.2em;
+            padding: 25px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+            text-align: justify;
+            border: 1px solid rgba(255,255,255,0.05);
+            transition: border 0.3s;
+        }
+        .projet:hover {
+            border-color: rgba(0, 210, 255, 0.3);
+        }
+        .projet button{
+            height: 40px;
+            border-radius: 6px;
+            font-size: 1em;
+            font-weight: 600;
+            text-align: center;
+            margin: 10px 10px 0 0;
+            background-color: var(--accent-cyber);
+            color: var(--bg-dark);
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            padding: 0 15px;
+        }
+        .projet button:hover{
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(16, 185, 129, 0.4);
+            background-color: #0d9488;
+            color: white;
+        }
+        /* Style spécifique pour le bouton dépôt pour varier le design cyber/ia */
+        .projet a:nth-of-type(2) button {
+            background-color: transparent;
+            border: 1px solid var(--accent-ia);
+            color: var(--accent-ia);
+        }
+        .projet a:nth-of-type(2) button:hover {
+            background-color: var(--accent-ia);
+            color: var(--bg-dark);
+            box-shadow: 0 5px 15px rgba(0, 210, 255, 0.4);
+        }
+        .projet span{
+            color: var(--text-main);
+            font-size: 1.3em;
+        }
+        .formation{
+            border-radius: 10px;
+            background-color: var(--card-bg);
+            margin: 20px;
+            color: var(--text-muted);
+            font-size: 1.2em;
+            padding: 25px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+            text-align: justify;
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+        .formation a {
+            text-decoration: none;
+            color: var(--accent-ia);
+            display: inline-block;
+            margin-top: 10px;
+            font-weight: 500;
+        }
+        .formation a:hover {
+            text-decoration: underline;
+        }
+        .formation span{
+            color: var(--accent-cyber);
+        }
+        .formation span strong {
+            color: var(--text-main);
+        }
+        .text{
+            font-size: 1.2em;
+            color: var(--text-main);
+        }
+        .contact{
+            border-radius: 10px;
+            background-color: var(--card-bg);
+            color: var(--text-muted);
+            font-size: 1.2em;
+            padding: 25px;
+            margin: 20px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.4); 
+            text-align: left;
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+        .img {
+            display: inline-block;
+            margin: 10px 15px 10px 0;
+        }
+        .img a {
+            text-decoration: none;
+            color: var(--bg-dark);
+            background-color: var(--text-main);
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: all 0.3s;
+            display: inline-block;
+        }
+        .img a:hover {
+            background-color: var(--accent-ia);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 210, 255, 0.3);
+        }
+        footer{
+            font-size: 1em;
+            text-align: center;
+            color: var(--text-muted);
+            padding: 30px;
+            background-color: rgba(10, 15, 29, 0.9);
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+        .float-btn{
+            border: none;
+            background-color: var(--accent-ia);
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            color: var(--bg-dark);
+            font-size: 1.5em;
+            box-index: 999;
+            box-shadow: 0 5px 15px rgba(0, 210, 255, 0.4);
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .float-btn:hover{
+            background-color: var(--accent-cyber);
+            color: var(--text-main);
+            box-shadow: 0 5px 15px rgba(16, 185, 129, 0.4);
+            transform: translateY(-3px);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="hero">
+        <h1><strong>TOUKAM TEGUIA CHRIST VINCENT</strong></h1>
+        <p>Etudiant en Génie Informatique - IUT de Douala</p>
+       <a href="#contact"> <button id="">Me contacter</button></a>
+       <a href="#projet"> <button id="">Voir mes projets</button></a>
+        </div>
+        <button class="float-btn" onclick="scrolltop()">⬆</button>
+    </header>
+    <main>
+        <section id="propos">
+            <div class="props"><strong><span>A propos de moi</span></strong></div>
+            <div class="propos">Etudiant passionné par le developpement web, la cybersécurité et l'inteligence artificielle à l'IUT de Douala. Je conçois des sites web modernes et responsives ainsi aue des minis bots whatsapp pour palier a des problèmes concrets autour de moi.</div>
+        </section>
+        <section id="competences">
+            <div class="props"><strong><span>Compétences</span></strong></div>
+            <div class="competences">HTML5 <span>⭐⭐⭐⭐</span></div>
+            <div class="competences">CSS3 <span>⭐⭐⭐</span></div>
+            <div class="competences">JavaScript <span>⭐⭐</span></div>
+            <div class="competences">GitHub <span>⭐⭐⭐⭐</span></div>
+            <div class="competences">Vscode <span>⭐⭐⭐</span></div>
+            <div class="competences">Figma <span>⭐⭐</span></div>
+            <div class="competences">Cisco packet tracer <span>⭐⭐⭐</span></div>
+        </section>
+        <section id="projet">
+            <div class="props"><strong><span>Projets</span></strong></div>
+            <div class="projet">
+                <span><strong>Site de messagerie instantanée</strong></span>
+                <p>Site web qui permet des utilisateurs de communiquer instantanément à travers des méssages. Front-end HTML5, CSS3 & JS + Backend Node.js, avec un formulaire d'inscription. </p>
+                <a href="https://chatapp-vlay.onrender.com"><button id="messagerie">🛠 Voir le projet</button></a>
+                <a href="https://github.com/Christ649/ChatApp"><button id="messagerie-depot">🔗 Dépot GitHub</button></a>
+            </div>
+            <div class="projet">
+                <span><strong>Site vitrine</strong></span>
+                <p>Conception de site présentant l'entreprise <span>PIXELLIA-STUDENT</span>, ses objectifs, ses atouts et ses responsables. Conçu et adapter au responsive mobile et PC.</p>
+                <a href="https://pixellia-student.onrender.com"><button id="pixellia">🛠 Voir du projet</button></a>
+                <a href="https://github.com/Christ649/pixellia"><button id="pixellia-depot">🔗 Dépot GitHub</button></a>
+            </div>
+            <div class="projet">
+                <span><strong>Calculatrice</strong></span>
+                <p>Calculatrice entierement conçu pour résoudre les opérations arithmétiques de base et mettant en avant mes compétences en JavaScript. Front-end HTML5 & CSS3 + Back-end JavaScript.</p>
+                <a href="...."><button id="Xcacl">🛠 Voir du projet</button></a>
+                <a href="https://github.com/Christ649/Xcalc"><button id="Xcalc-depot">🔗 Dépot GitHub</button></a>
+            </div>
+        </section>
+        <section id="formation">
+                <div class="props"><strong><span>Formation</span></strong></div>
+                <div class="formation">
+                <span class="text"><strong>Bac C Mathemtiques - Physiques</strong></span>
+                <p><strong>Lycée de Ndog-Hem pk12 | 2025 </strong> Parcours au cours du quel j'ai brillament obtenu une mention lors de l'examen nationale.</p>
+            </div>
+            <div class="formation">
+                <span><strong class="text">DUT Genie Informatique</strong></span>
+                <p><strong>IUT De Douala |  2025 - 2027 Formation en <span><strong>developpement web</strong></span>, <span><strong>bases de données</strong></span>,  <span><strong> Réseaux informatiques,</strong></span>  <span><strong>Design UI/UX,</strong></span> <span><strong> Cloud computing</strong></span> ainsi que <span><strong> Gestion des projets</strong></span>.</strong></p>
+            </div>
+            <div class="formation">
+                <span class="text"><strong>Certification CISCO NetAcad</strong></span>
+                <p><strong>Certifié par Cisco dans le cadre de son programme en ligne sur la plateforme NetAcad en <span><strong>Notions de base sur les réseaux</strong></span>.</strong></p>
+                <a href="https://credly.com/users/christ-teguia/edit">Consulter mon profil sur Credly et mon badge sur Credly</a>
+            </div>
+        </section>
+        <section id="contact">
+            <div class="props"><strong><span>Contact</span></strong></div>
+            <div class="contact">
+                <p>N'hésitez pas à me joindre pour un projet ou une collaboration via les plateformes ci dessous.</p>
+                <div class="img"><a href="https://wa.me/qr/J3HABZBAWBKTP1">Whatsapp</a></div>
+                <div class="img"><a href="mailto: teguiachrist54@gmail.com">Gmail</a></div>
+                <div class="img"><a href="tel:+237681705620">Telephone</a></div>
+                <div class="img"><a href="https://github.com/Christ649">GitHub</a></div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <strong><p>© 2026 TOUKAM TEGUIA CHRIST VINCENT. Tous droits réservés</p></strong>
+    </footer>
+</body>
+<script>
+    function scrolltop(){
+        window.scrollTo({top:0, behavior:"smooth"})
+    }
+</script>
+</html>
